@@ -8,7 +8,8 @@ import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import MapScreen from "./screens/MapScreen";
-
+import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+import {GOOGLE_MAPS_APIKEY} from "@env";
 export default function App() {
   const Stack = createStackNavigator();
   return (
