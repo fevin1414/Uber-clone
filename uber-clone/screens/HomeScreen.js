@@ -5,10 +5,13 @@ import NavOptions from "../components/NavOptions";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 import { GOOGLE_MAPS_APIKEY } from "@env";
 import { useDispatch } from "react-redux";
-import { setDestination,setOrigin } from "../slices/navSlice";
+import { setOrigin,setDestination } from "../slices/navSlice";
+
+
 
 const HomeScreen = () => {
   const dispatch=useDispatch();
+
   return (
     <SafeAreaView style={tw`bg-white h-full`}>
       <View style={tw`p-5`}>
