@@ -1,20 +1,29 @@
-import { View, Text ,StyleSheet,SafeAreaView} from 'react-native'
-import React from 'react'
-import tw from 'twrnc';
+import { View, Text, StyleSheet, SafeAreaView, Image } from "react-native";
+import React from "react";
+import tw from "twrnc";
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView>
-      <Text style={[tw `text-red-500 p-10`,{
-        color:"yellow"
-      }]}>I'm the HomeScreen</Text>
+    <SafeAreaView style={tw`bg-white h-full`}>
+      <View>
+        <Image
+          style={{
+            width: 100,
+            height: 100,
+            resizeMode: "contain",
+          }}
+          source={{
+            uri: "https://links.papareact.com/gzs",
+          }}
+        />
+      </View>
     </SafeAreaView>
-  )
-}
+  );
+};
 
 export default HomeScreen;
 const styles = StyleSheet.create({
-  text:{
- color:"blue",
+  text: {
+    color: "blue",
   },
 });
