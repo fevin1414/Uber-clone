@@ -63,7 +63,7 @@ const RideOptionsCar = () => {
   />
   <View style={tw`-ml-6`}>
     <Text style={tw`text-xl font-semibold`}>{title}</Text>
-    <Text>Travel Time ..</Text>
+    <Text>{setTravelTimeInformation?.duration.text}</Text>
   </View>
   <Text style={tw`text-xl`}>$100</Text>
 </TouchableOpacity>
