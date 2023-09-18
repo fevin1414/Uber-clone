@@ -78,7 +78,7 @@ const RideOptionsCar = () => {
 
       )}
       />
-      <View>
+      <View style={tw `mt-auto border-t border-gray-200`}>
 
   <TouchableOpacity disabled={!selected} style={tw `bg-black ${!selected && "bg-gray-300"}`}>
     {selected ? (
