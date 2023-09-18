@@ -47,7 +47,7 @@ const RideOptionsCar = () => {
           name="chevron-left" type="fontawesome"/>
         </TouchableOpacity>
       <Text style={tw `text-center py-5 text-xl`}>Select A Ride-{
-        setTravelTimeInformation?.distance.text
+        setTravelTimeInformation?.distance?.text
       }</Text>
       </View>
       <FlatList data={data} keyExtractor={(item)=>item.id}
@@ -66,7 +66,7 @@ const RideOptionsCar = () => {
   />
   <View style={tw`-ml-6`}>
     <Text style={tw`text-xl font-semibold`}>{title}</Text>
-    <Text>{setTravelTimeInformation?.duration.text}</Text>
+    <Text>{setTravelTimeInformation?.duration?.text}</Text>
   </View>
   <Text style={tw`text-xl`}>{new Intl.NumberFormat('en-gb',{
     style:'currency',
