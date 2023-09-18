@@ -4,6 +4,9 @@ import tw from "tailwind-react-native-classnames";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Icon } from "react-native-elements";
 import { useNavigation } from '@react-navigation/native';
+import { useSelector } from 'react-redux';
+import { selectTravelTimeInformation } from '../slices/navSlice';
+import navSlice from '../slices/navSlice';
 
 const data=[
   {
@@ -32,6 +35,7 @@ const data=[
 const RideOptionsCar = () => {
   const navigation=useNavigation();
   const [selected,setSelected]=useState(null);
+  const setTravelTimeInformation=useSelector(selectTravelTimeInformation);
   return (
     <SafeAreaView style={tw `bg-white flex-grow`}>
       <View>
@@ -39,7 +43,9 @@ const RideOptionsCar = () => {
           <Icon
           name="chevron-left" type="fontawesome"/>
         </TouchableOpacity>
-      <Text style={tw `text-center py-5 text-xl`}>Select A Ride</Text>
+      <Text style={tw `text-center py-5 text-xl`}>Select A Ride-{
+        setTravelTimeInformation?.distance.text
+      }</Text>
       </View>
       <FlatList data={data} keyExtractor={(item)=>item.id}
       renderItem={({item:{id,title,multiplier,image},item})=>(
