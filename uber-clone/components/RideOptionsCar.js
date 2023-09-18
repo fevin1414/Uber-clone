@@ -44,24 +44,37 @@ const RideOptionsCar = () => {
       <FlatList data={data} keyExtractor={(item)=>item.id}
       renderItem={({item:{id,title,multiplier,image},item})=>(
 <TouchableOpacity
-onPress={()=>setSelected(item)} style={tw `flex-row justify-between items-center px-10 ${id ===selected?.id && "bg-gray-200"}`}>
-<Image
-style={{
-  width:100,
-  height:100,
-  resizeMode:"contain"
-}}
-source={{uri:image}}
-/>
-<View style={tw`-ml-6`}>
-  <Text style={tw `text-xl font-semibold`}>{title}</Text>
-  <Text>Travel Time ..</Text>
-
-</View >
-<Text style={tw `text-xl`}>$100</Text>
+  onPress={() => setSelected(item)}
+  style={tw`flex-row justify-between items-center px-10 ${id === selected?.id ? "bg-gray-200" : ""}`}
+>
+  <Image
+    style={{
+      width: 100,
+      height: 100,
+      resizeMode: "contain"
+    }}
+    source={{ uri: image }}
+  />
+  <View style={tw`-ml-6`}>
+    <Text style={tw`text-xl font-semibold`}>{title}</Text>
+    <Text>Travel Time ..</Text>
+  </View>
+  <Text style={tw`text-xl`}>$100</Text>
 </TouchableOpacity>
+
       )}
       />
+      <View>
+
+  <TouchableOpacity disabled={!selected} style={tw `bg-black ${!selected && "bg-gray-300"}`}>
+    {selected ? (
+      <Text style={tw `text-center text-white text-xl`}>Choose {selected.title}</Text>
+    ) : (
+      <Text style={tw `text-center text-white text-xl`}>Choose a ride</Text>
+    )}
+  </TouchableOpacity>
+
+      </View>
     </SafeAreaView>
   )
 }
