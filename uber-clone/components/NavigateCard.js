@@ -8,6 +8,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import { useDispatch } from 'react-redux';
 import { setDestination } from '../slices/navSlice';
 import { useNavigation } from '@react-navigation/native';
+import NavFavourites from './NavFavourites';
 
 const NavigateCard = () => {
   const navigation=useNavigation();
@@ -40,6 +41,7 @@ navigation.navigate('RideOptionsCar');
  debounce={400}
  />
         </View>
+        <NavFavourites />
       </View>
     </SafeAreaView>
   )
